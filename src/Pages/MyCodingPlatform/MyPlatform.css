@@ -1,0 +1,47 @@
+.platform-link {
+    text-decoration: none;
+}
+
+.platforms{
+    height: 200px;
+    width: 160px;
+    margin: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.platforms > img{
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 16px;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.platforms > h2{
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px;
+    color: var(--text-primary);
+}
+
+.platforms:hover{
+    transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+}
+
+@media (max-width:700px) {
+    .platforms{
+        margin: 20px;
+        height: 180px;
+        width: 140px;
+    }
+
+    .platforms >img{
+        height: 80px;
+        width: 80px;
+    }
+}

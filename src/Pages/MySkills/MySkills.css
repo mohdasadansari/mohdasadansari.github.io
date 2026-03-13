@@ -1,0 +1,87 @@
+/* Individual Skill Item */
+.mySkills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.mySkillsIcon {
+    height: 100px;
+    width: 100px;
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.mySkillsIcon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--neon-purple), transparent);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.mySkillsIcon:hover::before {
+    width: 200%;
+    height: 200%;
+    opacity: 0.2;
+}
+
+.mySkillsIcon:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4),
+                0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.mySkillsName {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.mySkills:hover .mySkillsName {
+    color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mySkillsIcon {
+        height: 90px;
+        width: 90px;
+        background-size: 50px 50px;
+    }
+    
+    .mySkillsName {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mySkillsIcon {
+        height: 80px;
+        width: 80px;
+        background-size: 45px 45px;
+    }
+    
+    .mySkillsName {
+        font-size: 0.8rem;
+    }
+}

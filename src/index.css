@@ -1,0 +1,139 @@
+:root {
+    /* Bento Grid Dark Mode Theme */
+    --primary-bg: #030303;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-hover: rgba(255, 255, 255, 0.06);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --text-accent: #c084fc;
+    
+    --neon-purple: #a855f7;
+    --neon-pink: #ec4899;
+    --neon-blue: #3b82f6;
+    
+    --header-bg: rgba(10, 10, 10, 0.8);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    /* Scroll button colors for dark mode */
+    --scroll-btn-bg: rgba(168, 85, 247, 0.5);
+    --scroll-btn-hover: rgba(168, 85, 247, 0.8);
+    --scroll-btn-text: #ffffff;
+    
+    /* Legacy support */
+    --theme-button-bg-img: url(./images/light-mode-img.png);
+    --aboutMe-developer-img: url(./images/developer-img-light.svg);
+    --theme-button-bg-color: rgba(168, 85, 247, 0.5);
+    --theme-button-bg-size: 30px 30px;
+    --theme-button-bg-margin: 5px;
+  }
+
+  :root.dark {
+    /* Dark mode is now default - keeping for compatibility */
+    --primary-bg: #030303;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --text-primary: #ffffff;
+    
+    /* Scroll button colors for dark mode */
+    --scroll-btn-bg: rgba(168, 85, 247, 0.5);
+    --scroll-btn-hover: rgba(168, 85, 247, 0.8);
+    --scroll-btn-text: #ffffff;
+  }
+
+  :root.light {
+    /* Light mode theme - Clean white background */
+    --primary-bg: #ffffff;
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.15);
+    --glass-hover: rgba(0, 0, 0, 0.06);
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-accent: #8b5cf6;
+    
+    --neon-purple: #8b5cf6;
+    --neon-pink: #ec4899;
+    --neon-blue: #3b82f6;
+    
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --card-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
+    
+    /* Scroll button colors for light mode */
+    --scroll-btn-bg: rgba(139, 92, 246, 0.15);
+    --scroll-btn-hover: rgba(139, 92, 246, 0.25);
+    --scroll-btn-text: #8b5cf6;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    transition: background 0.5s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+
+  /* Glassmorphism Base Class */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .glass-card:hover {
+    background: var(--glass-hover);
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.3),
+                0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
+  }
+
+  /* 3D Tilt Hover Effect */
+  .tilt-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .tilt-card:hover {
+    transform: rotateX(2deg) rotateY(-2deg) translateY(-8px);
+  }
+
+  /* Neon Glow Effect */
+  .neon-glow:hover {
+    box-shadow: 0 0 30px var(--neon-purple),
+                0 0 60px var(--neon-purple),
+                0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-pink);
+  }
