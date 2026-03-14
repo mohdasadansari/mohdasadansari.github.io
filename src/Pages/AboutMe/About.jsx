@@ -6,12 +6,45 @@ const About = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const [isDark, setIsDark] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const textArray = ["Asad Ansari", "Full Stack Developer", "Problem Solver"];
   const period = 2000;
 
   const textArrayIndexRef = useRef(0);
   const fullTextRef = useRef(textArray[0]);
+
+  useEffect(() => {
+    // Check dark/light mode
+    const savedTheme = localStorage.getItem("theme");
+    const isDarkMode = savedTheme === "dark" || !savedTheme;
+    setIsDark(isDarkMode);
+
+    // Detect mobile view
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Listen for theme changes via MutationObserver
+    const observer = new MutationObserver(() => {
+      const newTheme = localStorage.getItem("theme");
+      const isDarkMode = newTheme === "dark" || !newTheme;
+      setIsDark(isDarkMode);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleTyping = () => {
@@ -138,17 +171,22 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div
-              className="spline-container"
+              className="spline-container pointer-events-none"
               style={{
                 width: "100%",
                 height: "500px",
                 position: "relative",
                 borderRadius: "1rem",
                 overflow: "hidden",
+                touchAction: "none",
               }}
             >
               <iframe
-                src="https://my.spline.design/batmanbeyond-BWR4MTNwSomZC2i02kG4UZYh/"
+                src={
+                  !isMobile && isDark
+                    ? "https://my.spline.design/batmanbeyond-ZFx7u6SnA395VyBHbsSY0e1x/"
+                    : "https://my.spline.design/genkubgreetingrobot-OfnvjwAO3bZ3qU92J6OZMJc6/"
+                }
                 frameBorder="0"
                 width="100%"
                 height="100%"
@@ -162,7 +200,41 @@ const About = () => {
                   background: "transparent",
                 }}
                 title="3D Avatar"
+                allow="accelerometer; ambient-light-sensor; autoplay; camera; encrypted-media; fullscreen; geolocation; gyroscope; magnetometer; microphone; midi; payment; picture-in-picture; usb; vr"
+                key={`${isMobile}-${isDark}`}
               />
+              {(isMobile || !isDark) && (
+                <motion.div
+                  style={{
+                    position: "absolute",
+                    bottom: "5px",
+                    right: "20px",
+                    textAlign: "center",
+                    pointerEvents: "none",
+                    zIndex: 10,
+                  }}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <p
+                    style={{
+                      fontSize: "0.85rem",
+                      fontWeight: "600",
+                      letterSpacing: "0.5px",
+                      color: "#fff",
+                      margin: 0,
+                      padding: "8px 16px",
+                      borderRadius: "20px",
+                      background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+                      boxShadow: "0 8px 20px rgba(139, 92, 246, 0.4), 0 0 20px rgba(236, 72, 153, 0.3)",
+                      backdropFilter: "blur(10px)",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                    }}
+                  >
+                    Play with me
+                  </p>
+                </motion.div>
+              )}            
             </div>
           </motion.div>
         </div>

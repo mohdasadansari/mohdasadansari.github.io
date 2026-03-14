@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 40px 80px;
+  padding: 60px 40px 60px;
   overflow: hidden;
 }
 
@@ -24,7 +24,6 @@
 .float-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
   opacity: 0.15;
 }
 
@@ -73,6 +72,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .hero-greeting {
@@ -92,6 +94,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .typed-text {
@@ -151,6 +155,9 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .highlight {
@@ -244,12 +251,16 @@
   min-height: 500px;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
+  border-radius: 1rem;
+  touch-action: manipulation;
 }
 
 .spline-container canvas {
   width: 100% !important;
   height: 100% !important;
   display: block;
+  max-width: 100%;
 }
 
 /* Spline Loader */
@@ -384,7 +395,6 @@
   border-radius: 50%;
   background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
   opacity: 0.3;
-  filter: blur(40px);
   animation: rotatePulse 4s ease-in-out infinite;
 }
 
@@ -445,7 +455,6 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--neon-purple), transparent);
   opacity: 0.15;
-  filter: blur(60px);
   animation: pulse 4s ease-in-out infinite;
 }
 
@@ -509,11 +518,11 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-bento-card {
-    padding: 50px;
+    padding: 45px;
   }
   
   .hero-name {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
   
   .hero-content {
@@ -523,64 +532,87 @@
 
 @media (max-width: 968px) {
   .hero-container {
-    padding: 100px 30px 60px;
+    padding: 50px 30px 50px;
   }
   
   .hero-bento-card {
-    padding: 40px;
+    padding: 35px;
   }
   
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
   
   .hero-name {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   
   .hero-description {
     font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
-  .avatar-container {
-    height: 400px;
+  .spline-container {
+    height: 350px;
+    min-height: 350px;
+    width: 100%;
   }
   
   .hero-stats {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
 @media (max-width: 576px) {
   .hero-container {
-    padding: 80px 20px 40px;
+    padding: 40px 16px 30px;
   }
   
   .hero-bento-card {
-    padding: 30px 24px;
+    padding: 20px 16px;
   }
   
   .hero-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
   
   .hero-greeting {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .hero-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
   
   .hero-tags {
-    gap: 8px;
+    gap: 6px;
+    flex-wrap: wrap;
   }
   
   .tag {
-    padding: 6px 16px;
-    font-size: 0.85rem;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .spline-container {
+    height: 300px;
+    min-height: 300px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0.75rem;
+  }
+  
+  .spline-container iframe {
+    height: calc(100% + 80px) !important;
   }
   
   .avatar-container {
@@ -588,46 +620,59 @@
   }
   
   .avatar-icon svg {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
   }
   
   .avatar-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .hero-stats {
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
   }
   
   .stat-item {
-    padding: 16px;
+    padding: 14px 12px;
+    min-width: 0;
   }
   
   .stat-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .stat-item p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+  
+  .download-resume-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    margin-top: 16px;
+  }
+  
+  .download-resume-btn svg {
+    width: 16px;
+    height: 16px;
   }
   
   .float-circle {
-    filter: blur(60px);
   }
   
   .float-circle.circle-1 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .float-circle.circle-2 {
     width: 250px;
     height: 250px;
   }
   
-  .float-circle.circle-2 {
-    width: 300px;
-    height: 300px;
-  }
-  
   .float-circle.circle-3 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 }
