@@ -11,7 +11,8 @@ const Education = () => {
       location: "Mathura, Uttar Pradesh",
       duration: "2022 - 2026",
     //   grade: "CGPA: 8.02/10",
-      grade: "Grade: First Class with Distinction",
+      // grade: "Grade: First Class with Distinction",
+      grade: "Grade: First Division with Honours",
       description: "Specializing in Full Stack Development, Data Structures & Algorithms, and Software Engineering.",
       subjects: [
         "Data Structures & Algorithms",

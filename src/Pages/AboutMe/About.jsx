@@ -216,7 +216,7 @@ const About = () => {
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <p
+                  {/* <p
                     style={{
                       fontSize: "0.85rem",
                       fontWeight: "600",
@@ -232,7 +232,7 @@ const About = () => {
                     }}
                   >
                     Play with me
-                  </p>
+                  </p> */}
                 </motion.div>
               )}            
             </div>
