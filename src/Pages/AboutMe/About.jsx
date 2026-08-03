@@ -139,7 +139,7 @@ const About = () => {
             </div>
 
             <motion.a
-              href="https://drive.google.com/file/d/1Ldk6DYQ9rssIC9iKnhPANLylsBVtY83g/view?usp=drive_link"
+              href="https://drive.google.com/file/d/12t8gNjX1Vf_MMQ4yEz-IZNRGqlaFHPta/view?usp=drive_link"
               className="download-resume-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
