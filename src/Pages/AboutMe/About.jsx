@@ -139,7 +139,7 @@ const About = () => {
             </div>
 
             <motion.a
-              href="https://drive.google.com/file/d/1QVyf1WnztSMOlWwVIE3w6uMzM3ZQXDvw/view?usp=sharing"
+              href="https://drive.google.com/file/d/1QK0OlwC1wSwVJ8DuCckQRMEde-6iCxJn/view?usp=sharing"
               className="download-resume-btn"
               target="_blank"
               rel="noopener noreferrer"
