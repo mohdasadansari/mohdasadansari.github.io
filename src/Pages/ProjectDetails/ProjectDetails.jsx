@@ -83,15 +83,36 @@ const ProjectDetails = () => {
           </div>
         </div>
 
+        {project.coldStartNote && (
+          <div className="cold-start-banner">
+            <span className="cold-start-icon">⚡</span>
+            <div className="cold-start-text">
+              <strong>Note:</strong> {project.coldStartNote}
+            </div>
+          </div>
+        )}
+
         <div className="project-details-actions">
-          <a
-            href={project.link}
-            target={project.link.startsWith("http") ? "_blank" : "_self"}
-            rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="detail-btn detail-btn-primary"
-          >
-            Open Live Project
-          </a>
+          {project.link && (
+            <a
+              href={project.link}
+              target={project.link.startsWith("http") ? "_blank" : "_self"}
+              rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="detail-btn detail-btn-primary"
+            >
+              Open Live Project
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="detail-btn detail-btn-github"
+            >
+              View on GitHub
+            </a>
+          )}
           <Link to="/projects" className="detail-btn detail-btn-secondary">
             Back to Projects
           </Link>

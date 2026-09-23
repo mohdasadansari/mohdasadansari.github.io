@@ -9,7 +9,14 @@ const Experience = () => {
       role: "Full Stack Developer Intern",
       company: "WhatBytes",
       duration: "September 2025 - Present",
-      description: "Working on building and maintaining full-stack solutions for a growing EdTech platform. I debugged critical data filtering and sorting issues across multiple fields, which significantly improved data accuracy and enhanced the experience for 300+ daily active users. Successfully integrated Razorpay payment gateway with secure webhook handling, reducing payment failures by 35%. Built a complete authentication system with OTP verification using JWT tokens and SMS gateway for 500+ new registrations. Implemented real-time bidirectional communication using Socket.io between POS system and admin dashboard, cutting support response time by 60%. Developed multiple responsive React.js screens with REST API integration and proper error handling.",
+      summary: "Contributing to production-level EdTech systems, focusing on backend stability, real-time workflows, and robust full-stack architecture.",
+      points: [
+        "Resolved critical database querying, filtering, and sorting bottlenecks across multi-attribute datasets, ensuring high data accuracy for 300+ daily active users.",
+        "Integrated Razorpay payment gateway with secure webhook handling and signature verification, reducing transaction failure rates by 35%.",
+        "Architected an end-to-end authentication system featuring JWT token management and SMS gateway OTP verification for 500+ user registrations.",
+        "Engineered real-time bidirectional communication using Socket.io between the POS terminal and admin dashboard, slashing operational support latency by 60%.",
+        "Developed responsive, production-ready React.js and Next.js frontend interfaces integrated with secure RESTful APIs."
+      ],
       technologies: ["TypeScript", "Django", "SQLite", "Next.js", "React", "Node.js", "MongoDB", "Express", "Socket.io", "Razorpay", "JWT", "REST APIs", "Git", "Fork"],
       delay: 0.2
     },
@@ -62,7 +69,19 @@ const Experience = () => {
               </div>
             </div>
             
-            <p className="experience-description">{exp.description}</p>
+            {exp.summary && <p className="experience-summary">{exp.summary}</p>}
+
+            {exp.points ? (
+              <ul className="experience-points">
+                {exp.points.map((point, index) => (
+                  <li key={index} className="experience-point-item">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="experience-description">{exp.description}</p>
+            )}
             
             <div className="experience-technologies">
               {exp.technologies.map((tech, index) => (

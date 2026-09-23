@@ -90,6 +90,49 @@
   transform: translateY(-2px);
 }
 
+.detail-btn-github {
+  color: var(--text-primary);
+  border-color: rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.08);
+}
+
+.detail-btn-github:hover {
+  transform: translateY(-2px);
+  border-color: var(--neon-purple);
+  background: rgba(168, 85, 247, 0.2);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.25);
+}
+
+.cold-start-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  margin: 20px 0 10px;
+  border-radius: 12px;
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.cold-start-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.cold-start-text {
+  font-size: 0.88rem;
+  color: #fef08a;
+  line-height: 1.5;
+}
+
+.cold-start-text strong {
+  color: #facc15;
+  margin-right: 4px;
+}
+
 @media (max-width: 576px) {
   .project-details-container {
     padding: 40px 16px;

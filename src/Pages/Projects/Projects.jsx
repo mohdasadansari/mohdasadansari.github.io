@@ -5,9 +5,20 @@ import "./Projects.css";
 import { trackProjectClick } from "../../utils/visitorTracker";
 import { projectsData } from "../../data/projectsData";
 
+const CATEGORIES = [
+  "All",
+  "Full Stack & AI",
+  "Algorithms & Core",
+  "Frontend & Web"
+];
+
 const Projects = () => {
-  const projects = projectsData;
+  const [activeCategory, setActiveCategory] = React.useState("All");
   const navigate = useNavigate();
+
+  const filteredProjects = activeCategory === "All"
+    ? projectsData
+    : projectsData.filter((project) => project.category === activeCategory);
 
   return (
     <motion.div 
@@ -27,8 +38,29 @@ const Projects = () => {
         Projects
       </motion.h1>
 
+      {/* Filter Tabs */}
+      <div className="projects-filter-bar">
+        {CATEGORIES.map((category) => {
+          const count = category === "All"
+            ? projectsData.length
+            : projectsData.filter((p) => p.category === category).length;
+
+          return (
+            <button
+              key={category}
+              type="button"
+              className={`filter-tab ${activeCategory === category ? "active" : ""}`}
+              onClick={() => setActiveCategory(category)}
+            >
+              <span className="filter-tab-label">{category}</span>
+              <span className="filter-tab-count">{count}</span>
+            </button>
+          );
+        })}
+      </div>
+
       <div className="projects-grid">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <motion.div
             key={project.id}
             initial={{ y: 50, opacity: 0 }}
@@ -72,18 +104,31 @@ const Projects = () => {
                 <p className="project-achievement">{project.achievement}</p>
 
                 <div className="project-actions">
-                  <a
-                    href={project.link}
-                    target={project.link.startsWith("http") ? "_blank" : "_self"}
-                    rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="project-btn project-btn-primary"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      trackProjectClick(project.topic, project.link);
-                    }}
-                  >
-                    Live Demo
-                  </a>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target={project.link.startsWith("http") ? "_blank" : "_self"}
+                      rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="project-btn project-btn-primary"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        trackProjectClick(project.topic, project.link);
+                      }}
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-btn project-btn-github"
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      GitHub
+                    </a>
+                  )}
                   <button
                     type="button"
                     className="project-btn project-btn-secondary"

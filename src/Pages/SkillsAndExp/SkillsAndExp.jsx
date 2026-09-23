@@ -21,6 +21,11 @@ import nextjsImg from "../../images/NextJS.jpg";
 import djangoImg from "../../images/Django.jpg";
 import sqliteImg from "../../images/SQLite.jpg";
 import forkImg from "../../images/fork.jpg";
+import awsImg from "../../images/aws.png";
+import firebaseImg from "../../images/firebase.png";
+import netlifyImg from "../../images/netlify.png";
+import renderImg from "../../images/render.png";
+import vercelImg from "../../images/vercel.png";
 
 const SkillsAndExp = () => {
   const skillCategories = [
@@ -55,12 +60,17 @@ const SkillsAndExp = () => {
       ]
     },
     {
-      title: "Tools",
+      title: "Tools & Platforms",
       skills: [
+        { bgimg: awsImg, name: "AWS" },
         { bgimg: githubImg, name: "Git / Github" },
         { bgimg: forkImg, name: "Git Fork" },
         { bgimg: PostManImg, name: "Postman" },
-        { bgimg: VSCodeImg, name: "VS Code" }
+        { bgimg: VSCodeImg, name: "VS Code" },
+        { bgimg: firebaseImg, name: "Firebase" },
+        { bgimg: netlifyImg, name: "Netlify" },
+        { bgimg: renderImg, name: "Render" },
+        { bgimg: vercelImg, name: "Vercel" }
       ]
     }
   ];

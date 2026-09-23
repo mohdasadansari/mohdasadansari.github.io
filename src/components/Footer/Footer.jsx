@@ -41,9 +41,9 @@ const Footer = () => {
               <Link to='https://github.com/asad-as1' target='_blank' rel="noopener noreferrer">
                 GitHub
               </Link>
-              <Link to='/' target='_blank' rel="noopener noreferrer">
+              {/* <Link to='/' target='_blank' rel="noopener noreferrer">
                 Portfolio
-              </Link>
+              </Link> */}
             </div>
           </div>
         </motion.div>
@@ -62,9 +62,9 @@ const Footer = () => {
           </p>
           
           <div className='footer-social'>
-            <Link to='/' className='social-icon' aria-label="Website">
+            {/* <Link to='/' className='social-icon' aria-label="Website">
               <WebsiteIcon />
-            </Link>
+            </Link> */}
             <Link to='https://www.linkedin.com/in/asad-as2/' target='_blank' className='social-icon' aria-label="LinkedIn">
               <LinkedInIcon />
             </Link>

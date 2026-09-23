@@ -82,6 +82,41 @@
   opacity: 0.8;
 }
 
+.experience-summary {
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.experience-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experience-point-item {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.experience-point-item::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--neon-purple);
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
 .experience-description {
   color: var(--text-secondary);
   line-height: 1.7;

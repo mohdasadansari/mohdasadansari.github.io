@@ -1,0 +1,96 @@
+.say-hi-fab {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 998;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 15px rgba(168, 85, 247, 0.2);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.say-hi-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0077b5;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 119, 181, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.say-hi-linkedin-icon {
+  font-size: 20px !important;
+}
+
+.say-hi-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.say-hi-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  transition: transform 0.3s ease;
+}
+
+.say-hi-fab:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgba(168, 85, 247, 0.7);
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.4), 0 0 20px rgba(0, 119, 181, 0.35);
+  background: rgba(30, 27, 75, 0.85);
+}
+
+.say-hi-fab:hover .say-hi-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.say-hi-fab:hover .say-hi-wave {
+  animation: sayHiWave 1s infinite alternate ease-in-out;
+}
+
+@keyframes sayHiWave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(14deg); }
+  50% { transform: rotate(-8deg); }
+  75% { transform: rotate(14deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (max-width: 576px) {
+  .say-hi-fab {
+    bottom: 20px;
+    left: 20px;
+    padding: 8px 14px 8px 10px;
+    font-size: 0.82rem;
+  }
+
+  .say-hi-icon-wrap {
+    width: 30px;
+    height: 30px;
+  }
+
+  .say-hi-linkedin-icon {
+    font-size: 18px !important;
+  }
+}

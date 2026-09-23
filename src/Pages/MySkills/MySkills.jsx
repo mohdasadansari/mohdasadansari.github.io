@@ -4,12 +4,13 @@ import './MySkills.css'
 const MySkills = ({ bgimg, name }) => {
   return (
     <div className="mySkills">
-    <div
-      className="mySkillsIcon"
-      style={{ backgroundImage: `url(${bgimg})` }}
-    ></div>
-    <p className="mySkillsName">{name}</p>
-  </div>
+      <div className="mySkillsIcon">
+        <div className="mySkillsImgContainer">
+          <img src={bgimg} alt={name} className="mySkillsImg" />
+        </div>
+      </div>
+      <p className="mySkillsName">{name}</p>
+    </div>
   )
 }
 

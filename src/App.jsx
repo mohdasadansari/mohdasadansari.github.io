@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // Changed this line
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import About from "./Pages/AboutMe/About";
@@ -13,6 +13,7 @@ import Education from './Pages/Education/Education';
 import ProjectDetails from './Pages/ProjectDetails/ProjectDetails';
 import ScrollToTop from "./ScrollToTop";
 import ScrollToTopButton from "./ScrollToTopButton";
+import SayHiButton from "./components/SayHiButton/SayHiButton";
 import { initSessionTracking, trackVisitor } from "./utils/visitorTracker";
 
 import "./App.css";
@@ -59,6 +60,7 @@ function AppContent() {
         </Routes>
         <Footer />
         <ScrollToTopButton />
+        <SayHiButton />
       </div>
     </>
   );
