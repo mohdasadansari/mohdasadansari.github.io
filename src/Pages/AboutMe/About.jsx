@@ -9,7 +9,7 @@ const About = () => {
   const [isDark, setIsDark] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  const textArray = ["Asad Ansari", "Full Stack Developer", "Problem Solver"];
+  const textArray = ["Asad Ansari", "Software Engineer", "Full Stack Developer", "Problem Solver"];
   const period = 2000;
 
   const textArrayIndexRef = useRef(0);
