@@ -46,7 +46,7 @@ export const projectsData = [
       "How to build secure, sandboxed code execution environments in the browser",
       "How real-time WebSockets and version snapshot systems work at scale"
     ],
-    link: "https://genetix-anx.netlify.app",
+    link: "https://genetix.studio/",
     github: "https://github.com/asad-as1/website-builder",
     delay: 0.1
   },
