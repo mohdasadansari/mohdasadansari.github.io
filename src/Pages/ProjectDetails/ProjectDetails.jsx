@@ -100,7 +100,7 @@ const ProjectDetails = () => {
               rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
               className="detail-btn detail-btn-primary"
             >
-              Open Live Project
+              Live Project
             </a>
           )}
           {project.github && (

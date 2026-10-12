@@ -115,7 +115,7 @@ const Projects = () => {
                         trackProjectClick(project.topic, project.link);
                       }}
                     >
-                      Live Demo
+                      Live Project
                     </a>
                   )}
                   {project.github && (

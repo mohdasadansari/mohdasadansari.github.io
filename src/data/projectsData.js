@@ -83,7 +83,7 @@ export const projectsData = [
       "How to manage high-frequency DOM manipulation without performance throttling",
       "How to implement graph data structures and priority queues in pure JavaScript"
     ],
-    link: "https://asad-as1.github.io/PathFinder/",
+    link: "https://pathcraft-anx.netlify.app/",
     github: "https://github.com/asad-as1/PathFinder",
     delay: 0.2
   },
